@@ -2,7 +2,7 @@ import java.util.*;
 
 class tools
 {
-	int a[][], b[][], sum[][], row, col;
+	private int a[][], b[][], sum[][], row, col;
 	
 	public tools(int row, int col) // assign the instance variables for rows and columns and allocate the matrices
 	{
