@@ -13,7 +13,7 @@ class info
 	
 	public void show()
 	{
-		System.out.println("\nUser: " + name + "\nRoll number: " + roll); 
+		System.out.println("\nUser: " + name + "\nRoll number: " + roll);
 	}
 }
 
