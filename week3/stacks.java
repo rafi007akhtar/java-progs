@@ -76,7 +76,7 @@ class Stacking
 				case 2:
 					val = stk.pop();
 					if (val == -1) System.out.println("Pop failed. Stack underflow");
-					else System.out.println("Pop successful");
+					else System.out.println("Value popped = " + val);
 					break;
 				
 				case 3:
