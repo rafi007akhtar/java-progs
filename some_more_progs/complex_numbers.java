@@ -17,6 +17,12 @@ class complex
 		this.im = im;
 	}
 	
+	public complex(complex z) // create a shallow copy of the complex number object
+	{
+		this.re = z.re;
+		this.im = z.im;
+	}
+	
 	public complex add(complex num) // add two complex numbers and return the sum
 	{
 		/* 
@@ -33,6 +39,14 @@ class complex
 		sum.im = this.im + num.im;
 		
 		return sum;
+	}
+	
+	public complex mul(complex num) // multiply the complex numbers
+	{
+		complex prod = new complex();
+		prod.re = (this.re * num.re) - (this.im * num.im);
+		prod.im = (this.re * num.im) + (this.im * num.re); 
+		return prod;
 	}
 	
 	public String display() // display the called complex number
@@ -53,13 +67,23 @@ class ComplexNumbers
 		complex c1 = new complex(a, b);
 		System.out.println("The number is " + c1.display());
 		
-		System.out.print("\nEnter the real and imaginary parts of number 2: ");
-		a = sc.nextInt();
-		b = sc.nextInt();
-		complex c2 = new complex(a, b);
-		System.out.println("The number is " + c2.display());
+		System.out.print("\nDo you want the the mathematical operations to be performed with \n1. This number, or \n2. Another complex number? \nEnter choice: ");
+		int ch = sc.nextInt();
+		complex c2;
+		
+		if (ch == 1) 
+			c2 = new complex(c1); // create a shallow copy of c1
+		else
+		{
+			System.out.print("\nEnter the real and imaginary parts of number 2: ");
+			a = sc.nextInt();
+			b = sc.nextInt();
+			c2 = new complex(a, b);
+			System.out.println("The number is " + c2.display());
+		}
 		
 		complex sum = c1.add(c2);
-		System.out.println("\nThe sum of these two numbers is " + sum.display());
+		complex prod = c1.mul(c2);
+		System.out.println("\nSum = " + sum.display() + "\nProduct = " + prod.display());
 	}
 }
