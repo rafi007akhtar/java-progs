@@ -101,21 +101,29 @@ import java.util.*;
 		{	
 			int c,p;
 			String n,s;
-			//Scanner sc= new Scanner(System.in);
-			//System.out.println("Enter Teacher code, name, subject and publication");
-			/*c=sc.nextInt();
-			 n=sc.nextLine();
-			 s=sc.nextLine();
-			 p=sc.nextInt();
-			 */
+			Scanner sc= new Scanner(System.in);
+			
+			System.out.print("Enter teacher name: ");
+			n = sc.nextLine();
+			System.out.print("Enter teacher code: ");
+			c = sc.nextInt();
+			String flush = sc.nextLine(); // flush the i/p stream here
+			System.out.print("Enter subject: ");
+			s = sc.nextLine();
+			System.out.print("Enter number of publications: ");
+			p = sc.nextInt();
+
+			System.out.println();
 		
-			c=10;
+			/*c=10;
 			p=1;
 			n="ray";
-			s="eng";
+			s="eng";*/
 			
 			Teacher ob= new Teacher(c,n,s,p);
 			ob.display();
+			System.out.println();
+			
 			System.out.println("Enter code, name, speed and daily wages of Reg. Typist");
 			int c1=11;
 			String n1="rup";
